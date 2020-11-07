@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <body style="background-color: black;">
+    <p id="countdown" style="background-color: black; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 80px; text-align: center;"></p>
+    <script>
+      var elfterelfter = new Date('2020-11-11T00:00:00');
+      var x = setInterval(function() {
+        let now = new Date().getTime();
+        let diff = elfterelfter - now;
+        let tage = Math.floor(diff / (1000 * 60 * 60 * 24));
+        let stunden = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+        let minuten = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+        let sekunden = Math.floor(diff % (1000 * 60) / 1000);
+        let countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = 'Noch ' +
+        tage + ' Tage, ' + 
+        stunden + ' Stunden, ' + 
+        minuten + ' Minuten und ' + 
+        sekunden + ' Sekunden...';
+        if (diff < 0) {
+          countdownElement.innerHTML = 'HAPPY BIRTHDAY!';
+          countdownElement.style.fontSize = '120px';
+          switch (-sekunden % 7) {
+            case 0: countdownElement.style.color = 'red';
+            break;
+            case 1: countdownElement.style.color = 'pink';
+              break;
+            case 2: countdownElement.style.color = 'purple';
+              break;
+            case 3: countdownElement.style.color = 'blue';
+              break;
+            case 4: countdownElement.style.color = 'green';
+              break;
+            case 5: countdownElement.style.color = 'yellow';
+              break;
+            case 6: countdownElement.style.color = 'orange';
+          }
+        }
+      },1000);
+    </script>
+  </body>
+</html>
