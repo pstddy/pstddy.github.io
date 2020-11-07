@@ -12,11 +12,20 @@
         let minuten = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
         let sekunden = Math.floor(diff % (1000 * 60) / 1000);
         let countdownElement = document.getElementById("countdown");
-        countdownElement.innerHTML = 'Noch ' +
-        tage + ' Tage, ' + 
-        stunden + ' Stunden, ' + 
-        minuten + ' Minuten und ' + 
-        sekunden + ' Sekunden...';
+		let text = '';
+		if (tage == 0) {
+			text = 'Noch ' +
+				stunden + ' Stunden, ' + 
+				minuten + ' Minuten und ' + 
+				sekunden + ' Sekunden...';
+		} else {
+			text = 'Noch ' +
+				tage + ' Tage, ' + 
+				stunden + ' Stunden, ' + 
+				minuten + ' Minuten und ' + 
+				sekunden + ' Sekunden...';
+		}
+		countdownElement.innerHTML = text;
         if (diff < 0) {
           countdownElement.innerHTML = 'HAPPY BIRTHDAY!';
           countdownElement.style.fontSize = '120px';
