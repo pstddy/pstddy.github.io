@@ -3,7 +3,7 @@
   <body style="background-color: black;">
     <p id="countdown" style="background-color: black; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 80px; text-align: center;"></p>
     <script>
-      var elfterelfter = new Date('2020-11-08 00:00:00 GMT+0100');
+      var elfterelfter = new Date('2020-11-11 00:00:00 GMT+0100');
       var x = setInterval(function() {
         let now = new Date().getTime();
         let diff = elfterelfter - now;
@@ -27,7 +27,7 @@
 		}
 		countdownElement.innerHTML = text;
         if (diff < 0) {
-          countdownElement.innerHTML = 'HAPPY BIRTHDAY!';
+          countdownElement.innerHTML = 'HAPPY BIRTHDAY THERESA!';
           countdownElement.style.fontSize = '120px';
           switch (-sekunden % 7) {
             case 0: countdownElement.style.color = 'red';
