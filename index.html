@@ -16,22 +16,22 @@
         let countdownElement = document.getElementById("countdown");
 				let restZeit = '';
         
-				if (!tage <= 0) {
+				if (tage > 0) {
 					restZeit = 'Noch ' +
 						tage + ' Tage, ' + 
 						stunden + ' Stunden, ' + 
 						minuten + ' Minuten und ' + 
 						sekunden + ' Sekunden...';
-				} else if (!stunden <= 0){
+				} else if (stunden > 0){
 					restZeit = 'Noch ' +
 						stunden + ' Stunden, ' + 
 						minuten + ' Minuten und ' + 
 						sekunden + ' Sekunden...';
-				} else if (!minuten <= 0){
+				} else if (minuten > 0){
 					restZeit = 'Noch ' +
 						minuten + ' Minuten und ' + 
 						sekunden + ' Sekunden...';
-				} else if (!sekunden <= 10) {
+				} else if (sekunden > 10) {
 					restZeit = 'Noch ' +
 						sekunden + ' Sekunden...';
 				} else {
