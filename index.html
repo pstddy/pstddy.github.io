@@ -3,60 +3,62 @@
   <body style="background-color: black;">
     <p id="countdown" style="background-color: black; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 80px; text-align: center;"></p>
     <script>
-      var zielDatum = new Date('2020-11-10 17:30:00 GMT+0100');
+      var zielDatum = new Date('2020-11-10 17:45:00 GMT+0100');
       var x = setInterval(function() {
         let now = new Date().getTime();
         let diff = zielDatum - now;
         
-        let tage = Math.floor(diff / (1000 * 60 * 60 * 24));
-        let stunden = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
-        let minuten = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
-        let sekunden = Math.floor(diff % (1000 * 60) / 1000);
+		let tage = Math.floor(diff / (1000 * 60 * 60 * 24));
+		let stunden = Math.floor(diff % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
+		let minuten = Math.floor(diff % (1000 * 60 * 60) / (1000 * 60));
+		let sekunden = Math.floor(diff % (1000 * 60) / 1000);
         
         let countdownElement = document.getElementById("countdown");
-				let restZeit = '';
-        
-				if (tage > 0) {
-					restZeit = 'Noch ' +
-						tage + ' Tage, ' + 
-						stunden + ' Stunden, ' + 
-						minuten + ' Minuten und ' + 
-						sekunden + ' Sekunden...';
-				} else if (stunden > 0){
-					restZeit = 'Noch ' +
-						stunden + ' Stunden, ' + 
-						minuten + ' Minuten und ' + 
-						sekunden + ' Sekunden...';
-				} else if (minuten > 0){
-					restZeit = 'Noch ' +
-						minuten + ' Minuten und ' + 
-						sekunden + ' Sekunden...';
-				} else if (sekunden > 10) {
-					restZeit = 'Noch ' +
-						sekunden + ' Sekunden...';
-				} else {
-					restZeit = sekunden;
-				}
+		let restZeit = '';
+
+		if (tage > 0) {
+			restZeit = 'Noch ' +
+				tage + ' Tage, ' + 
+				stunden + ' Stunden, ' + 
+				minuten + ' Minuten und ' + 
+				sekunden + ' Sekunden...';
+		} else if (stunden > 0){
+			restZeit = 'Noch ' +
+				stunden + ' Stunden, ' + 
+				minuten + ' Minuten und ' + 
+				sekunden + ' Sekunden...';
+		} else if (minuten > 0){
+			restZeit = 'Noch ' +
+				minuten + ' Minuten und ' + 
+				sekunden + ' Sekunden...';
+		} else if (sekunden > 10) {
+			restZeit = 'Noch ' +
+				sekunden + ' Sekunden...';
+		} else {
+			restZeit = sekunden;
+			countdownElement.style.fontSize = '120px';
+
+		}
         if (diff > 0) {
 				countdownElement.innerHTML = restZeit;
-        } else { 
-          countdownElement.innerHTML = 'HAPPY BIRTHDAY THERESA!';
-          countdownElement.style.fontSize = '120px';
-          switch (-sekunden % 7) {
-            case 0: countdownElement.style.color = 'red';
-            break;
-            case 1: countdownElement.style.color = 'pink';
-              break;
-            case 2: countdownElement.style.color = 'purple';
-              break;
-            case 3: countdownElement.style.color = 'blue';
-              break;
-            case 4: countdownElement.style.color = 'green';
-              break;
-            case 5: countdownElement.style.color = 'yellow';
-              break;
-            case 6: countdownElement.style.color = 'orange';
-        }
+		} else { 
+		  countdownElement.innerHTML = 'HAPPY BIRTHDAY THERESA!';
+		  countdownElement.style.fontSize = '120px';
+		  switch (-sekunden % 7) {
+			case 0: countdownElement.style.color = 'red';
+			break;
+			case 1: countdownElement.style.color = 'pink';
+			  break;
+			case 2: countdownElement.style.color = 'purple';
+			  break;
+			case 3: countdownElement.style.color = 'blue';
+			  break;
+			case 4: countdownElement.style.color = 'green';
+			  break;
+			case 5: countdownElement.style.color = 'yellow';
+			  break;
+			case 6: countdownElement.style.color = 'orange';
+		}
       },1000);
     </script>
   </body>
