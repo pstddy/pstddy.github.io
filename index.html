@@ -3,7 +3,7 @@
   <body style="background-color: black;">
     <p id="countdown" style="background-color: black; color: white; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 80px; text-align: center;"></p>
     <script>
-      var zielDatum = new Date('2020-11-11 00:00:00 GMT+0100');
+      var zielDatum = new Date('2021-06-06 00:00:00 GMT+0100');
       var x = setInterval(function() {
         let now = new Date().getTime();
         let diff = zielDatum - now;
@@ -42,7 +42,7 @@
         if (diff > 0 && restZeit != 0) {
           countdownElement.innerHTML = restZeit;
         } else { 
-          countdownElement.innerHTML = 'HAPPY BIRTHDAY THERESA!';
+          countdownElement.innerHTML = 'HAPPY BIRTHDAY ME!';
           countdownElement.style.fontSize = '120px';
           switch (-sekunden) {
             case 1:
