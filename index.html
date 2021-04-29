@@ -44,30 +44,18 @@
         } else { 
           countdownElement.innerHTML = 'HAPPY BIRTHDAY ME!';
           countdownElement.style.fontSize = '120px';
-          switch (-sekunden) {
-            case 1:
-            case 8:
-            case 15: countdownElement.style.color = 'pink';
+          switch ((-sekunden) % 7) {
+            case 1: countdownElement.style.color = 'pink';
               break;
-            case 2:
-            case 9:
-            case 16: countdownElement.style.color = 'purple';
+            case 2: countdownElement.style.color = 'purple';
               break;
-            case 3:
-            case 10:
-            case 17: countdownElement.style.color = 'blue';
+            case 3: countdownElement.style.color = 'blue';
               break;
-            case 4:
-            case 11:
-            case 18: countdownElement.style.color = 'green';
+            case 4: countdownElement.style.color = 'green';
               break;
-            case 5:
-            case 12:
-            case 19: countdownElement.style.color = 'yellow';
+            case 5: countdownElement.style.color = 'yellow';
               break;
-            case 6:
-            case 13:
-            case 20: countdownElement.style.color = 'orange';
+            case 6: countdownElement.style.color = 'orange';
               break;
             default: countdownElement.style.color = 'red';
           }
